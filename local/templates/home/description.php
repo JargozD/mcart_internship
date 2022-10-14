@@ -1,7 +1,7 @@
 <?
 $arTemplate = array (
-  'NAME' => 'home',
-  'DESCRIPTION' => '',
+  'NAME' => 'Главная',
+  'DESCRIPTION' => 'Шаблон главной странницы',
   'SORT' => '',
   'TYPE' => '',
 );

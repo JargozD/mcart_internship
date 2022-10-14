@@ -34,7 +34,7 @@ $arrFilter = array("=PROPERTY_PRIORITY_VALUE" => "Да");
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
+			0 => "PROPERTY_ADDRESS",
 			1 => "PROPERTY_PRICE",
 			2 => "",
 		),
@@ -149,6 +149,7 @@ $arrFilter = array("=PROPERTY_PRIORITY_VALUE" => "Да");
 			3 => "PROPERTY_STAGES",
 			4 => "PROPERTY_BATHS",
 			5 => "PROPERTY_GARAGE",
+			6 => "PROPERTY_ADDRESS",
 		),
 		"IBLOCKS" => array(),
 		"IBLOCK_TYPE" => "adverts",
@@ -174,7 +175,7 @@ $arrFilter = array("=PROPERTY_PRIORITY_VALUE" => "Да");
 		"DETAIL_URL" => "",
 		"FIELD_CODE" => array(
 			0 => "PROPERTY_LINK_OUT",
-			1 => "",
+			1 => "PROPERTY_ICON",
 		),
 		"IBLOCKS" => array(
 			0 => "6",

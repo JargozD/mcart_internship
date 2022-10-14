@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 				<? endif ?>
 				<div class="text">
 					<h2><? echo $arItem["NAME"] ?></h2>
-					<p class="location"><span class="property-icon icon-room"></span> Los Angeles, CA 90005</p>
+					<p class="location"><span class="property-icon icon-room"></span> <? echo $arItem["PROPERTY_ADDRESS_VALUE"] ?></p>
 					<p class="mb-2"><strong><?= $arItem["PROPERTY_PRICE_VALUE"] ?> ₽</strong></p>
 
 

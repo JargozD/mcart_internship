@@ -18,6 +18,9 @@
 						<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
 							<li class="has-children"><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
 								<ul class="dropdown">
+						<? elseif ($arItem["DEPTH_LEVEL"] == 2) : ?>
+							<li class="has-children"><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+								<ul class="dropdown">
 						<? else : ?>
 							<li <? if ($arItem["SELECTED"]): ?>class="active"<? endif ?>><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
 								<ul class="dropdown">
@@ -26,7 +29,7 @@
 					<? else : ?>
 						<? if ($arItem["PERMISSION"] > "D") : ?>
 
-							<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
+							<? if ($arItem["DEPTH_LEVEL"] == 3) : ?>
 								<li <? if ($arItem["SELECTED"]): ?>class="active"<? endif ?>><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
 							<? else : ?>
 								<li><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>

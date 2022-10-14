@@ -37,14 +37,14 @@ $this->setFrameMode(true);
 					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="prop-entry d-block">
 						<figure>
 							<? if (is_array($arItem["PREVIEW_PICTURE"])) : ?>
-								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Image" class="img-fluid">
+								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Image" width="300" height="300">
 							<? endif ?>
 						</figure>
 						<div class="prop-text">
 							<div class="inner">
 								<span class="price rounded"><? echo $arItem["PROPERTY_PRICE_VALUE"] ?> ₽</span>
 								<h3 class="title"><? echo $arItem["NAME"] ?></h3>
-								<p class="location">Los Angeles, CA 90005</p>
+								<p class="location"><? echo $arItem["PROPERTY_ADDRESS_VALUE"] ?></p>
 							</div>
 							<div class="prop-more-info">
 								<div class="inner d-flex">
