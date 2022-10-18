@@ -11,8 +11,8 @@ global $arrFilter;
 $arrFilter = array("=PROPERTY_PRIORITY_VALUE" => "Да");
 ?>
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"carousel", 
+	"bitrix:news.list",
+	"carousel",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
