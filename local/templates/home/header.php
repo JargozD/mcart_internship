@@ -105,6 +105,27 @@ IncludeTemplateLangFile(__FILE__);
             </p>
           </div>
           <div class="col-6 col-md-6 text-right">
+
+            <?
+            global $USER;
+            if ($USER->IsAuthorized()){
+              $APPLICATION->IncludeComponent(
+                "bitrix:system.auth.form",
+                "auth",
+                array(
+                  "COMPONENT_TEMPLATE" => ".default",
+                  "FORGOT_PASSWORD_URL" => "/polzovatel/",
+                  "PROFILE_URL" => "/polzovatel/profile.php",
+                  "REGISTER_URL" => "/polzovatel/registration.php",
+                  "SHOW_ERRORS" => "N"
+                )
+              );
+            }
+            else echo '<a href="/polzovatel" class="mr-3">Войти</a>';
+            ?>
+
+            
+
             <? $APPLICATION->IncludeComponent(
               "bitrix:main.include",
               ".default",
@@ -170,7 +191,7 @@ IncludeTemplateLangFile(__FILE__);
   </div>
 
   <?
-  if(!CSite::InDir('/index.php'))
+  if (!CSite::InDir('/index.php'))
     $APPLICATION->IncludeComponent(
       "bitrix:breadcrumb",
       "navigation",
