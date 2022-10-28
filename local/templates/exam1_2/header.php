@@ -1,17 +1,15 @@
-<?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-?>
-
-<?php
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 IncludeTemplateLangFile(__FILE__);
 ?>
 
 <!DOCTYPE html>
 <html lang="<?= LANGUAGE_ID ?>">
+<? $APPLICATION->ShowHead(); ?>
 
 <head>
+    <title><? $APPLICATION->ShowTitle() ?></title>
+
     <?
-    $APPLICATION->ShowHead();
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/reset.css");
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/style.css");
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/owl.carousel.css");
@@ -20,33 +18,27 @@ IncludeTemplateLangFile(__FILE__);
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/scripts.js");
     ?>
+
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicon.ico">
     <link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH; ?>/img/favicon.ico">
-
-    <title><? $APPLICATION->ShowTitle(); ?></title>
 </head>
 
+<? $APPLICATION->ShowPanel() ?>
+
 <body>
-    <div id="panel"><? $APPLICATION->ShowPanel() ?></div>
     <!-- wrap -->
     <div class="wrap">
         <!-- header -->
         <header class="header">
             <div class="inner-wrap">
-                <div class="logo-block"><a href="/exam-e1/" class="logo">Мебельный магазин</a>
+                <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
                 </div>
                 <div class="main-phone-block">
-
                     <? if (date("H", time()) >= 9 && date("H", time()) <= 18) : ?>
-
                         <a href="tel:84952128506" class="phone">8 (495) 212-85-06</a>
-
                     <? else : ?>
-
                         <a href="mailto:store@store.ru" class="phone">store@store.ru</a>
-
                     <? endif ?>
-
                     <div class="shedule">время работы с 9-00 до 18-00</div>
                 </div>
                 <div class="actions-block">
@@ -54,70 +46,78 @@ IncludeTemplateLangFile(__FILE__);
                         <input type="text" placeholder="Поиск">
                         <button type="submit"></button>
                     </form>
-
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:system.auth.form",
-                        "demo",
-                        array(
-                            "FORGOT_PASSWORD_URL" => "/exam-e1/login/?forgot_password=yes",
-                            "PROFILE_URL" => "/exam-e1/login/user.php",
-                            "REGISTER_URL" => "/exam-e1/login/?register=yes",
-                            "SHOW_ERRORS" => "N"
-                        )
-                    ); ?>
-                    
+                    <nav class="menu-block">
+                        <ul>
+                            <li class="att popup-wrap">
+                                <a id="hd_singin_but_open" href="" class="btn-toggle">Войти на сайт</a>
+                                <form action="/" class="frm-login popup-block">
+                                    <div class="frm-title">Войти на сайт</div>
+                                    <a href="" class="btn-close">Закрыть</a>
+                                    <div class="frm-row"><input type="text" placeholder="Логин"></div>
+                                    <div class="frm-row"><input type="password" placeholder="Пароль"></div>
+                                    <div class="frm-row"><a href="" class="btn-forgot">Забыли пароль</a></div>
+                                    <div class="frm-row">
+                                        <div class="frm-chk">
+                                            <input type="checkbox" id="login">
+                                            <label for="login">Запомнить меня</label>
+                                        </div>
+                                    </div>
+                                    <div class="frm-row"><input type="submit" value="Войти"></div>
+                                </form>
+                            </li>
+                            <li><a href="">Зарегистрироваться</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
         <!-- /header -->
-
-
         <!-- nav -->
         <nav class="nav">
             <div class="inner-wrap">
 
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "menu_top",
-                    array(
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "left",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => "3",
-                        "MENU_CACHE_GET_VARS" => array(),
-                        "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "ROOT_MENU_TYPE" => "top",
-                        "USE_EXT" => "Y",
-                        "COMPONENT_TEMPLATE" => "menu"
-                    ),
-                    false
-                ); ?>
-
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "menu_top",
+                array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "3",
+                    "MENU_CACHE_GET_VARS" => array(""),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "top",
+                    "USE_EXT" => "Y"
+                )
+            ); ?>
+                
             </div>
         </nav>
         <!-- /nav -->
-        <? if ($APPLICATION->GetCurDir() != "/exam-e1/") : ?>
+
+        <? if (!CSite::InDir("/exam-e2/index.php")) : ?>
             <!-- breadcrumbs -->
             <div class="breadcrumbs-box">
                 <div class="inner-wrap">
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",
-                        "navigation",
+                        "",
                         array(
                             "PATH" => "",
-                            "SITE_ID" => "e1",
+                            "SITE_ID" => "e2",
                             "START_FROM" => "0",
-                            "COMPONENT_TEMPLATE" => "navigation"
+                            "COMPONENT_TEMPLATE" => ".default"
                         ),
                         false
-                    );
-                    ?>
+                    ); ?>
                 </div>
             </div>
             <!-- /breadcrumbs -->
         <? endif ?>
+
         <!-- page -->
         <div class="page">
             <!-- content box -->
@@ -126,14 +126,13 @@ IncludeTemplateLangFile(__FILE__);
                 <div class="content">
                     <div class="cnt">
 
-                        <? if ($APPLICATION->GetCurDir() != "/exam-e1/") : ?>
+                        <? if (!CSite::InDir("/exam-e2/index.php")) : ?>
                             <header>
-                                <h1><? $APPLICATION->ShowTitle(false); ?></h1>
+                                <h1><? $APPLICATION->ShowTitle(false) ?></h1>
                             </header>
                         <? endif ?>
 
-                        <? if ($APPLICATION->GetCurDir() == "/exam-e1/") : ?>
-
+                        <? if (CSite::InDir("/exam-e2/index.php")) : ?>
                             <p>«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
                             </p>
 
@@ -284,5 +283,4 @@ IncludeTemplateLangFile(__FILE__);
                                 </div>
                             </div>
                             <!-- /afisha box -->
-
                         <? endif ?>
