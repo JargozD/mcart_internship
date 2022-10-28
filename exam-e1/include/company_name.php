@@ -1,0 +1,1 @@
+<img src="/exam-e1/include/bx_default_logo.gif" alt="" />
