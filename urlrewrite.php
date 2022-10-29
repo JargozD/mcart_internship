@@ -24,6 +24,14 @@ $arUrlRewrite=array (
     'PATH' => '/o-servise/novosti/index.php',
     'SORT' => 100,
   ),
+  21 => 
+  array (
+    'CONDITION' => '#^/exam-e1/services/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/exam-e1/services/index.php',
+    'SORT' => 100,
+  ),
   19 => 
   array (
     'CONDITION' => '#^/exam-e1/products/#',
@@ -32,12 +40,12 @@ $arUrlRewrite=array (
     'PATH' => '/exam-e1/products/index.php',
     'SORT' => 100,
   ),
-  21 => 
+  29 => 
   array (
-    'CONDITION' => '#^/exam-e1/services/#',
+    'CONDITION' => '#^/exam-e3/services/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/exam-e1/services/index.php',
+    'PATH' => '/exam-e3/services/index.php',
     'SORT' => 100,
   ),
   22 => 
@@ -48,6 +56,14 @@ $arUrlRewrite=array (
     'PATH' => '/exam-e2/services/index.php',
     'SORT' => 100,
   ),
+  27 => 
+  array (
+    'CONDITION' => '#^/exam-e3/products/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/exam-e3/products/index.php',
+    'SORT' => 100,
+  ),
   23 => 
   array (
     'CONDITION' => '#^/exam-e2/products/#',
@@ -56,20 +72,28 @@ $arUrlRewrite=array (
     'PATH' => '/exam-e2/products/index.php',
     'SORT' => 100,
   ),
-  18 => 
-  array (
-    'CONDITION' => '#^/exam-e1/news/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/exam-e1/news/index.php',
-    'SORT' => 100,
-  ),
   24 => 
   array (
     'CONDITION' => '#^/exam-e2/news/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/exam-e2/news/index.php',
+    'SORT' => 100,
+  ),
+  28 => 
+  array (
+    'CONDITION' => '#^/exam-e3/news/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/exam-e3/news/index.php',
+    'SORT' => 100,
+  ),
+  18 => 
+  array (
+    'CONDITION' => '#^/exam-e1/news/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/exam-e1/news/index.php',
     'SORT' => 100,
   ),
   12 => 
@@ -94,6 +118,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/exam-e2/rew/index.php',
+    'SORT' => 100,
+  ),
+  30 => 
+  array (
+    'CONDITION' => '#^/exam-e3/rew/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/exam-e3/rew/index.php',
     'SORT' => 100,
   ),
   0 => 
