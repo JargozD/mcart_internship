@@ -19,7 +19,7 @@ $this->setFrameMode(true);
 	<div class="side-block side-anonse">
 		<div class="title-block"><span class="i i-title01"></span><? echo GetMessage("INFO") ?></div>
 		<div class="item">
-			<?= include($arResult["FILE"]); ?>
+			<?= include($arResult["FILE"]); ?> 
 		</div>
 	</div>
 

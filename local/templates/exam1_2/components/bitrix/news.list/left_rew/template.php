@@ -24,8 +24,18 @@ $this->setFrameMode(true);
 				<div class="inner-block">
 					<div class="title">
 						<div class="photo-block">
+
+							<?
+							$resize_image = CFile::ResizeImageGet(
+								$arItem["PREVIEW_PICTURE"]['ID'],
+								array("width" => 49, "height" => 49),
+								BX_RESIZE_IMAGE_PROPORTIONAL,
+								false
+							);
+							?>
+
 							<? if (isset($arItem["PREVIEW_PICTURE"]["SRC"])) : ?>
-								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="49px" height="49px" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>">
+								<img src="<?= $resize_image['src'] ?>" alt="">
 							<? else : ?>
 								<img src="<?= SITE_TEMPLATE_PATH; ?> /img/rew/no_photo.jpg" width="49px" height="49px" alt="">
 							<? endif ?>

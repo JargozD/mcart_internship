@@ -36,7 +36,7 @@ IncludeTemplateLangFile(__FILE__);
                 <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
                 </div>
                 <div class="main-phone-block">
-                    <? if (date("H", time()) >= 9 && date("H", time()) <= 18) : ?>
+                    <? if (date("H", time()) >= 9 && date("H", time()) <= 17) : ?>
                         <a href="tel:84952128506" class="phone">8 (495) 212-85-06</a>
                     <? else : ?>
                         <a href="mailto:store@store.ru" class="phone">store@store.ru</a>

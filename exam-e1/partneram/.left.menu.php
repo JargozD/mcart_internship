@@ -4,7 +4,7 @@ $aMenuLinks = Array(
 		"Условия сотрудничества", 
 		"/exam-e1/partneram/index.php", 
 		Array(), 
-		Array(), 
+		Array("DESCRIPTION"=>"тест"), 
 		"" 
 	),
 	Array(
@@ -18,7 +18,7 @@ $aMenuLinks = Array(
 		"Расписание мероприятий", 
 		"/exam-e1/partneram/raspisanie-meropriyatiy/", 
 		Array(), 
-		Array(), 
+		Array("DESCRIPTION"=>"тест"), 
 		"" 
 	)
 );

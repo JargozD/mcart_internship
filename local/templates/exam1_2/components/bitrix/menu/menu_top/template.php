@@ -17,7 +17,7 @@
 						<?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
 					<? endif ?>
 
-					<? if ($arItem["IS_PARENT"]) : ?>
+					<? if ($arItem["IS_PARENT"] && $arItem["PERMISSION"] > "D") : ?>
 
 						<? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
 							<li><a href="<?= $arItem["LINK"] ?>" class="<? if ($arItem["SELECTED"]) : ?>root-item-selected<? else : ?>root-item<? endif ?>"><?= $arItem["TEXT"] ?></a>

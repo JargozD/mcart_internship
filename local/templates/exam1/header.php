@@ -37,7 +37,7 @@ IncludeTemplateLangFile(__FILE__);
                 </div>
                 <div class="main-phone-block">
 
-                    <? if (date("H", time()) >= 9 && date("H", time()) <= 18) : ?>
+                    <? if (date("H", time()) >= 9 && date("H", time()) <= 17) : ?>
 
                         <a href="tel:84952128506" class="phone">8 (495) 212-85-06</a>
 
@@ -98,7 +98,7 @@ IncludeTemplateLangFile(__FILE__);
             </div>
         </nav>
         <!-- /nav -->
-        <? if ($APPLICATION->GetCurDir() != "/exam-e1/") : ?>
+        <? if (!CSite::InDir("/exam-e3/index.php")) : ?>
             <!-- breadcrumbs -->
             <div class="breadcrumbs-box">
                 <div class="inner-wrap">
@@ -126,13 +126,13 @@ IncludeTemplateLangFile(__FILE__);
                 <div class="content">
                     <div class="cnt">
 
-                        <? if ($APPLICATION->GetCurDir() != "/exam-e1/") : ?>
+                    <? if (!CSite::InDir("/exam-e1/index.php")) : ?>
                             <header>
                                 <h1><? $APPLICATION->ShowTitle(false); ?></h1>
                             </header>
                         <? endif ?>
 
-                        <? if ($APPLICATION->GetCurDir() == "/exam-e1/") : ?>
+                        <? if (CSite::InDir("/exam-e1/index.php")) : ?>
 
                             <p>«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
                             </p>
