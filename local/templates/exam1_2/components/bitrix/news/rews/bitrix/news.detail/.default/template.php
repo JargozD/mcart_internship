@@ -13,6 +13,8 @@
 $this->setFrameMode(true);
 ?>
 
+<!-- <? echo '<pre>'; var_dump($arResult["DISPLAY_PROPERTIES"]) ;'</pre>'?> -->
+
 <div class="review-block">
 	<div class="review-text">
 		<div class="review-text-cont">
@@ -31,21 +33,26 @@ $this->setFrameMode(true);
 	</div>
 </div>
 
-<? if ($arResult["PROPERTIES"]["DOCS"]["VALUE"]) : ?>
-	<div class="exam-review-doc">
-		<p><?= GetMessage("DOCUMENTS") ?></p>
-		<? foreach ($arResult["PROPERTIES"]["DOCS"]["VALUE"] as $idFile) : ?>
+<div class="exam-review-doc">
+	<p><?= GetMessage("DOCUMENTS") ?></p>
+	<? if (count($arResult["DISPLAY_PROPERTIES"]["DOCS"]["VALUE"]) > 1) : ?>
 
-			<?
-			$srcFile = CFile::GetPath($idFile);
-			$obFile = CFile::GetByID($idFile);
-			$arFile = $obFile->Fetch();
-			?>
+		<? foreach ($arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"] as $arItem) : ?>
 
 			<div class="exam-review-item-doc">
 				<img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH; ?>/img/icons/pdf_ico_40.png">
-				<a href="<?= $srcFile ?>" download><?= $arFile["ORIGINAL_NAME"] ?></a>
+				<a href="<?= $arItem["SRC"] ?>" download><?= $arItem["ORIGINAL_NAME"] ?></a>
 			</div>
+
 		<? endforeach ?>
-	</div>
-<? endif ?>
+
+	<? else : ?>
+
+		<div class="exam-review-item-doc">
+			<img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH; ?>/img/icons/pdf_ico_40.png">
+			<a href="<?= $arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"]["SRC"] ?>" download><?= $arResult["DISPLAY_PROPERTIES"]["DOCS"]["FILE_VALUE"]["ORIGINAL_NAME"] ?></a>
+		</div>
+
+	<? endif ?>
+
+</div>

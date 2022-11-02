@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Отзывы", 
-		"#", 
+		"/exam-e3/rew/", 
 		Array(), 
 		Array(), 
 		"" 
